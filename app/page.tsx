@@ -12,7 +12,7 @@ export default function Home() {
 
   // check if in developement 
 
-  const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://fitters.netlify.app'
+  const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://fitters.netlify.app/'
 
   const fetchData = async () => {
     // POST /api/generate-answer
