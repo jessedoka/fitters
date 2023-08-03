@@ -10,13 +10,17 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [prompt, setPrompt] = useState('')
 
+  // check if in developement 
+
+  const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://fitters.netlify.app'
+
   const fetchData = async () => {
     // POST /api/generate-answer
     setLoading(true)
     try {
 
       if (!prompt || prompt === null) return
-      const res = await fetch('http://localhost:3000/api/generate-answer', {
+      const res = await fetch(`${url}/api/generate-answer`, {
         method: 'POST',
         body: JSON.stringify({ prompt }),
         headers: {
