@@ -74,6 +74,7 @@ export default function Home() {
                 {
                   // check if data.text is a string
                   typeof data.text === 'string' ? data.text.split('\n').map((str: string, i: number) => <p key={i}>{str}</p>) : data.text
+                }
               </MDXProvider>
             </p>
           </div>
