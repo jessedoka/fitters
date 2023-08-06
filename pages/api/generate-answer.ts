@@ -31,16 +31,12 @@ export default async function handler(
         model: "gpt-3.5-turbo",
         messages: [
             {
-                "role": "system",
-                "content": "Answer in a consistent manner. \n\nWhen I ask for help to write something, you will reply with a document that contains the following: \nSmart:\n\nCasual:\n\nInclude links on where to get those items\nAsk the user for a colour if not provided"
-            },
-            {
                 "role": "user",
                 "content": `${prompt}`
             },
         ],
-        temperature: 1,
-        max_tokens: 668,
+        temperature: 0.9, // temperature is how crazy the AI's responses can be
+        max_tokens: 1068,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,

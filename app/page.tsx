@@ -46,7 +46,14 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-2xl font-medium text-center">Find the perfect fit for your next project</h2>
 
+        <span className='text-white opacity-40 max-w-lg text-center mt-3'>
+          Provide a brief description on the type clothing you want to wear and Fitters will provide you with a list of clothing that fits your description.
+
+          The more specific you are, the better the results.
+        </span>
+
         <div className="flex flex-col items-center justify-center w-full mt-8">
+          
           <input
             type="text"
             className="w-full px-4 py-2 text-lg border  rounded-md bg-transparent
@@ -67,7 +74,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full mt-8">
           <h2 className="text-2xl font-medium text-center">Answer</h2>
           <div className="flex flex-col items-center justify-center w-full mt-8">
-            <p className="text-lg font-medium text-center bg-gray-900">
+            <p className="text-lg font-medium text-center">
               
               <MDXProvider>
                {/* render newlines */}
