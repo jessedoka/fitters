@@ -47,8 +47,6 @@ export default function Home() {
         <h2 className="text-2xl font-medium text-center">Find the perfect fit for your next project</h2>
 
         <span className='text-white opacity-40 max-w-lg text-center mt-3'>
-          Provide a brief description on the type clothing you want to wear and Fitters will provide you with a list of clothing that fits your description.
-
           The more specific you are, the better the results.
         </span>
 
@@ -77,9 +75,7 @@ export default function Home() {
             <p className="text-lg font-medium text-center">
               
               <MDXProvider>
-               {/* render newlines */}
                 {
-                  // check if data.text is a string
                   typeof data.text === 'string' ? data.text.split('\n').map((str: string, i: number) => <p key={i}>{str}</p>) : data.text
                 }
               </MDXProvider>
