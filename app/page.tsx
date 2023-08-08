@@ -56,7 +56,7 @@ export default function Home() {
             type="text"
             className="w-full px-4 py-2 text-lg border  rounded-md bg-transparent
             focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-300"
-            placeholder="Description of your fit"
+            placeholder="Outfit (noun)"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
           />

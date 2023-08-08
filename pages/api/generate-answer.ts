@@ -32,7 +32,7 @@ export default async function handler(
         messages: [
             {
                 "role": "user",
-                "content": `${prompt}`
+                "content": `what can I wear with a ${prompt}`
             },
         ],
         temperature: 0.9, // temperature is how crazy the AI's responses can be
