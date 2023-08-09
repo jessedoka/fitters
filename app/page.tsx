@@ -72,13 +72,14 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full mt-8">
           <h2 className="text-2xl font-medium text-center">Answer</h2>
           <div className="flex flex-col items-center justify-center w-full mt-8">
-            <p className="text-lg font-medium text-center">
-              
-              <MDXProvider>
+            <p className="text-lg font-medium text-center max-w-2xl">
                 {
-                  typeof data.text === 'string' ? data.text.split('\n').map((str: string, i: number) => <p key={i}>{str}</p>) : data.text
+                  typeof data.text === 'string' ? 
+                  data.text.split('\n').map(
+                    (str: string, i: number) => <p key={i}>{str}</p>
+                  ) 
+                  : data.text
                 }
-              </MDXProvider>
             </p>
           </div>
         </div>
