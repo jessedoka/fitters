@@ -32,11 +32,11 @@ export default async function handler(
         messages: [
             {
                 "role": "user",
-                "content": `${prompt}`
+                "content": `what can I wear with a ${prompt}?`
             },
         ],
-        temperature: 0.9, // temperature is how crazy the AI's responses can be
-        max_tokens: 1068,
+        temperature: 0.9,
+        max_tokens: 680,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,

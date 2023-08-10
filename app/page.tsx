@@ -56,7 +56,7 @@ export default function Home() {
             type="text"
             className="w-full px-4 py-2 text-lg border  rounded-md bg-transparent
             focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-300"
-            placeholder="Description of your fit"
+            placeholder="Describe Your Outfit!"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
           />
@@ -72,13 +72,14 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full mt-8">
           <h2 className="text-2xl font-medium text-center">Answer</h2>
           <div className="flex flex-col items-center justify-center w-full mt-8">
-            <p className="text-lg font-medium text-center">
-              
-              <MDXProvider>
+            <p className="text-lg font-medium text-center max-w-2xl">
                 {
-                  typeof data.text === 'string' ? data.text.split('\n').map((str: string, i: number) => <p key={i}>{str}</p>) : data.text
+                  typeof data.text === 'string' ? 
+                  data.text.split('\n').map(
+                    (str: string, i: number) => <p key={i}>{str}</p>
+                  ) 
+                  : data.text
                 }
-              </MDXProvider>
             </p>
           </div>
         </div>
