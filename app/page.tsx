@@ -10,7 +10,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [prompt, setPrompt] = useState('')
 
-  // check if in developement 
+  // check if in developement
 
   const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://fitters.netlify.app/'
 
@@ -51,7 +51,7 @@ export default function Home() {
         </span>
 
         <div className="flex flex-col items-center justify-center w-full mt-8">
-          
+
           <input
             type="text"
             className="w-full px-4 py-2 text-lg border  rounded-md bg-transparent
@@ -74,10 +74,10 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center w-full mt-8">
             <p className="text-lg font-medium text-center max-w-2xl">
                 {
-                  typeof data.text === 'string' ? 
+                  typeof data.text === 'string' ?
                   data.text.split('\n').map(
                     (str: string, i: number) => <p key={i}>{str}</p>
-                  ) 
+                  )
                   : data.text
                 }
             </p>
