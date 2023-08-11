@@ -109,7 +109,10 @@ export default function Home() {
                 {
                   typeof data.text === 'string' ? 
                   data.text.split('\n').map(
-                    (str: string, i: number) => <p key={i}>{str}</p>
+                    (str: string, i: number) => <p className='p-2 rounded-md border' key={i}>{
+                      // only show when not empty
+                      str !== '' ? str : null
+                    }</p>
                   ) 
                   : data.text
                 }
