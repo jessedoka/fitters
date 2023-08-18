@@ -57,12 +57,12 @@ export default async function handler(
         presence_penalty: 0,
     });
 
-    
+
     return res.status(200).json({ text: response.data.choices[0].message?.content});
-    
-    
 
 
-    
-    
+
+
+
+
 }

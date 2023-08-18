@@ -12,7 +12,7 @@ export default function Home() {
   const [style, setStyle] = useState('')
   const [isMale, setIsMale] = useState(true)
 
-  // check if in developement 
+  // check if in developement
 
   const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://fitters.netlify.app/'
 
@@ -58,7 +58,7 @@ export default function Home() {
           <button className={`w-1/2 px-4 py-2 text-lg font-medium dark:text-white rounded-md hover:bg-sky-700 focus:outline-none focus:ring-2 border focus:ring-blue-400 focus:ring-opacity-50 transition duration-300 ${isMale ? 'text-white bg-sky-500' : 'transparent'}`}
           onClick={() => setIsMale(true)}
           >
-            Male 
+            Male
           </button>
 
           <button className={`w-1/2 px-4 py-2 text-lg font-medium dark:text-white rounded-md hover:bg-sky-700 focus:outline-none focus:ring-2 border focus:ring-blue-400 focus:ring-opacity-50 transition duration-300 ${isMale ? 'transparent' : 'text-white bg-sky-500'}`}
@@ -81,10 +81,10 @@ export default function Home() {
             onChange={(e) => setStyle(e.target.value)}
           />
       </div>
-    
+
 
         <div className="flex flex-col items-center justify-center w-full mt-8">
-          
+
           <input
             type="text"
             className="w-full px-4 py-2 text-lg border rounded-md bg-transparent
@@ -107,13 +107,13 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center w-full mt-8">
             <p className="text-lg font-medium max-w-2xl">
                 {
-                  typeof data.text === 'string' ? 
+                  typeof data.text === 'string' ?
                   data.text.split('\n').map(
                     (str: string, i: number) => <p className='p-2 rounded-md border' key={i}>{
                       // only show when not empty
                       str !== '' ? str : null
                     }</p>
-                  ) 
+                  )
                   : data.text
                 }
             </p>
