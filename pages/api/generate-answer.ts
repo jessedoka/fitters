@@ -5,9 +5,12 @@ type ResponseData = {
     text: ChatCompletionResponseMessage | string | undefined;
 };
 
+
 interface GenerateNextApiRequest extends NextApiRequest {
     body: {
         prompt: string;
+        isMale: boolean;
+        style: string;
     };
 }
 
@@ -22,20 +25,32 @@ export default async function handler(
     res: NextApiResponse<ResponseData>
 ) {
     const { prompt } = req.body;
+    const { style } = req.body;
+    const { isMale } = req.body;
+
 
     if (!prompt || prompt === "") {
         return res.status(400).json({ text: "No prompt provided" });
     }
 
+    if (prompt.length > 200) {
+        return res.status(400).json({ text: "Prompt is too long" });
+    }
+
+
     const response = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
             {
+                "role": "system",
+                "content": "Be concise.\nDisplay in the form of a list of different options.\nUse correct grammar.\nUse correct spelling.\nUse correct punctuation.\nUse complete sentences.\nUse a variety of sentence types.\nUse the active voice.\nUse the present tense.\nUse the third person."
+            },
+            {
                 "role": "user",
-                "content": `what can I wear with a ${prompt}?`
+                "content": `what can a ${isMale ? "Male" : "Female"} wear with an ${prompt}? for a ${style} event`
             },
         ],
-        temperature: 0.9,
+        temperature: 0.75,
         max_tokens: 680,
         top_p: 1,
         frequency_penalty: 0,
